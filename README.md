@@ -1,4 +1,4 @@
-# 🎯 Sintonia (Wavelength Web) - v1.1.0
+# 🎯 Sintonia (Wavelength Web) - v1.2.0
 
 > Um jogo social de adivinhação e leitura de mentes baseado no famoso jogo de tabuleiro **Wavelength**.
 
@@ -6,25 +6,31 @@ O **Sintonia** desafia dois ou mais jogadores a pensarem na mesma frequência. U
 
 ---
 
+## 🆕 Novidades desta Versão (v1.2.0)
+- **🎲 Gerador de Temas:** Agora você conta com um banco de dados de mais de 90 pares de opostos integrados. Basta clicar em "Sortear Tema" para obter ideias instantâneas.
+- **⚡ Melhorias de Fluxo:** Interface otimizada para transições mais claras entre o Vidente e o Adivinhador.
+
+---
+
 ## 🎮 Como Jogar
 
 O jogo é dividido em etapas para garantir que ninguém veja o que não deve:
 
-1.  **Etapa do Vidente:** * Defina dois conceitos opostos (ex: Café Ruim vs Café Ótimo).
-    * Clique em **Sortear Alvo**. O espectro colorido aparecerá apenas para você.
-    * Pense em uma dica que se encaixe na posição sorteada.
-    * Clique em **Ocultar e Passar** e entregue o dispositivo para o outro jogador.
+1. **Etapa do Vidente:** * Defina dois conceitos opostos manualmente ou clique em **🎲 Sortear Tema** para usar uma sugestão aleatória.
+   * Clique em **↺ Embaralhar Faixa**. O espectro colorido aparecerá apenas para você.
+   * Pense em uma dica que se encaixe na posição sorteada.
+   * Clique em **🙈 Ocultar e Passar** e entregue o dispositivo para o outro jogador.
 
-2.  **Etapa do Telepata:**
-    * Com base na dica dada pelo Vidente, mova a agulha clicando na roleta.
-    * Quando estiver satisfeito, clique em **Confirmar Palpite**.
+2. **Etapa do Telepata:**
+   * Com base na dica dada pelo Vidente, mova a agulha clicando na roleta.
+   * Quando estiver satisfeito, clique em **🎯 Revelar Resultado**.
 
-3.  **Resultado:**
-    * O alvo é revelado e a pontuação é calculada automaticamente:
-        * 🎯 **4 Pontos:** Na mosca!
-        * 🔥 **3 Pontos:** Muito perto.
-        * ✨ **2 Pontos:** Quase lá.
-        * 💨 **0 Pontos:** Passou longe!
+3. **Resultado:**
+   * O alvo é revelado e a pontuação é calculada automaticamente:
+     * 🎯 **4 Pontos:** Na mosca!
+     * 🔥 **3 Pontos:** Muito perto.
+     * ✨ **2 Pontos:** Quase lá.
+     * 💨 **0 Pontos:** Passou longe!
 
 ---
 
