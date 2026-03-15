@@ -2,6 +2,107 @@ import { useState } from 'react';
 
 // Fases: 'master' → 'hidden' → 'guesser' → 'result'
 
+const temasSugeridos = [
+  { left: "Frio", right: "Quente" },
+  { left: "Barato", right: "Caro" },
+  { left: "Inofensivo", right: "Perigoso" },
+  { left: "Útil", right: "Inútil" },
+  { left: "Chato", right: "Divertido" },
+  { left: "Salgado", right: "Doce" },
+  { left: "Subestimado", right: "Superestimado" },
+  { left: "Lento", right: "Rápido" },
+  { left: "Científico", right: "Místico" },
+  { left: "Fraco", right: "Forte" },
+  { left: "Comida Ruim", right: "Comida Boa" },
+  { left: "Chato de fazer", right: "Legal de fazer" },
+  { left: "Trabalho", right: "Lazer" },
+  { left: "Clássico", right: "Moderno" },
+  { left: "Vilão", right: "Herói" },
+  { left: "Feio", right: "Bonito" },
+  { left: "Triste", right: "Feliz" },
+  { left: "Estressante", right: "Relaxante" },
+  { left: "Difícil", right: "Fácil" },
+  { left: "Arriscado", right: "Seguro" },
+  { left: "Mentira", right: "Verdade" },
+  { left: "Preguiçoso", right: "Trabalhador" },
+  { left: "Sem graça", right: "Engraçado" },
+  { left: "Bagunçado", right: "Organizado" },
+  { left: "Infantil", right: "Adulto" },
+  { left: "Ignorante", right: "Inteligente" },
+  { left: "Silencioso", right: "Barulhento" },
+  { left: "Frágil", right: "Resistente" },
+  { left: "Simples", right: "Complexo" },
+  { left: "Raro", right: "Comum" },
+  { left: "Natural", right: "Artificial" },
+  { left: "Local", right: "Global" },
+  { left: "Velho", right: "Novo" },
+  { left: "Curto", right: "Longo" },
+  { left: "Pequeno", right: "Grande" },
+  { left: "Baixo", right: "Alto" },
+  { left: "Escuro", right: "Claro" },
+  { left: "Seco", right: "Molhado" },
+  { left: "Pesado", right: "Leve" },
+  { left: "Carinhoso", right: "Frio" },
+  { left: "Introvertido", right: "Extrovertido" },
+  { left: "Calmo", right: "Agitado" },
+  { left: "Conservador", right: "Inovador" },
+  { left: "Legal", right: "Cringe" },
+  { left: "Normal", right: "Estranho" },
+  { left: "Fácil de entender", right: "Confuso" },
+  { left: "Sério", right: "Brincalhão" },
+  { left: "Responsável", right: "Irresponsável" },
+  { left: "Educado", right: "Mal educado" },
+  { left: "Confiável", right: "Suspeito" },
+  { left: "Santo", right: "Pecador" },
+  { left: "Herói improvável", right: "Herói perfeito" },
+  { left: "Comum", right: "Luxuoso" },
+  { left: "Barato de manter", right: "Caro de manter" },
+  { left: "Fácil de aprender", right: "Difícil de dominar" },
+  { left: "Rápido de fazer", right: "Demorado" },
+  { left: "Seguro para crianças", right: "Só para adultos" },
+  { left: "Popular", right: "Desconhecido" },
+  { left: "Superpoder inútil", right: "Superpoder incrível" },
+  { left: "Hobby", right: "Profissão" },
+  { left: "Casa", right: "Aventura" },
+  { left: "Cidade", right: "Natureza" },
+  { left: "Tecnológico", right: "Tradicional" },
+  { left: "Individual", right: "Em grupo" },
+  { left: "Planejado", right: "Espontâneo" },
+  { left: "Esperado", right: "Surpreendente" },
+  { left: "Lógico", right: "Emocional" },
+  { left: "Teórico", right: "Prático" },
+  { left: "Racional", right: "Impulsivo" },
+  { left: "Estável", right: "Caótico" },
+  { left: "Previsível", right: "Imprevisível" },
+  { left: "Caloroso", right: "Distante" },
+  { left: "Amigável", right: "Hostil" },
+  { left: "Humilde", right: "Arrogante" },
+  { left: "Esperto", right: "Ingênuo" },
+  { left: "Corajoso", right: "Covarde" },
+  { left: "Paciente", right: "Impaciente" },
+  { left: "Criativo", right: "Sem imaginação" },
+  { left: "Motivador", right: "Desmotivador" },
+  { left: "Produtivo", right: "Procrastinador" },
+  { left: "Importante", right: "Irrelevante" },
+  { left: "Realista", right: "Fantástico" },
+  { left: "Sonho", right: "Pesadelo" },
+  { left: "Amor", right: "Ódio" },
+  { left: "Amigo", right: "Inimigo" },
+  { left: "Sorte", right: "Azar" },
+  { left: "Vitória", right: "Derrota" },
+  { left: "Sucesso", right: "Fracasso" },
+  { left: "Céu", right: "Inferno" },
+  { left: "Começo", right: "Fim" },
+  { left: "Primeiro", right: "Último" },
+  { left: "Cheio", right: "Vazio" },
+  { left: "Esperança", right: "Desespero" },
+  { left: "Correto", right: "Errado" },
+  { left: "Justo", right: "Injusto" },
+  { left: "Ético", right: "Antiético" },
+  { left: "Normal para um adulto", right: "Vergonhoso para um adulto" },
+  { left: "Vale a pena", right: "Não vale a pena" }
+];
+
 export default function App() {
   const [phase, setPhase] = useState('master');
   const [targetAngle, setTargetAngle] = useState(90);
@@ -13,6 +114,13 @@ export default function App() {
   const shuffleTarget = () => {
     const newAngle = Math.floor(Math.random() * 181);
     setTargetAngle(newAngle);
+  };
+
+  const shuffleTheme = () => {
+    const randomIndex = Math.floor(Math.random() * temasSugeridos.length);
+    const tema = temasSugeridos[randomIndex];
+    setConceptLeft(tema.left);
+    setConceptRight(tema.right);
   };
 
   const handleWheelClick = (e) => {
@@ -223,6 +331,14 @@ export default function App() {
             >
               ↺ Embaralhar Faixa
             </button>
+
+            <button
+              onClick={shuffleTheme}
+              className="px-6 py-2.5 bg-indigo-600 hover:bg-indigo-500 text-white font-semibold rounded-lg shadow-[0_4px_20px_rgba(79,70,229,0.3)] active:scale-95 transition-all text-sm flex items-center gap-2"
+            >
+              🎲 Sortear Tema
+            </button>
+
             <button
               onClick={() => setPhase('hidden')}
               disabled={!clueName.trim()}
