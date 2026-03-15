@@ -1,16 +1,40 @@
-# React + Vite
+# 🎯 Sintonia (Wavelength Web) - v1.1.0
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> Um jogo social de adivinhação e leitura de mentes baseado no famoso jogo de tabuleiro **Wavelength**.
 
-Currently, two official plugins are available:
+O **Sintonia** desafia dois ou mais jogadores a pensarem na mesma frequência. Um jogador (o Vidente) recebe um alvo oculto em um espectro entre dois conceitos opostos e deve dar uma dica para que o outro jogador (o Telepata) encontre a posição exata.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## 🎮 Como Jogar
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+O jogo é dividido em etapas para garantir que ninguém veja o que não deve:
 
-## Expanding the ESLint configuration
+1.  **Etapa do Vidente:** * Defina dois conceitos opostos (ex: Café Ruim vs Café Ótimo).
+    * Clique em **Sortear Alvo**. O espectro colorido aparecerá apenas para você.
+    * Pense em uma dica que se encaixe na posição sorteada.
+    * Clique em **Ocultar e Passar** e entregue o dispositivo para o outro jogador.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+2.  **Etapa do Telepata:**
+    * Com base na dica dada pelo Vidente, mova a agulha clicando na roleta.
+    * Quando estiver satisfeito, clique em **Confirmar Palpite**.
+
+3.  **Resultado:**
+    * O alvo é revelado e a pontuação é calculada automaticamente:
+        * 🎯 **4 Pontos:** Na mosca!
+        * 🔥 **3 Pontos:** Muito perto.
+        * ✨ **2 Pontos:** Quase lá.
+        * 💨 **0 Pontos:** Passou longe!
+
+---
+
+## 🚀 Tecnologias Utilizadas
+
+Este projeto foi construído utilizando o que há de mais moderno no ecossistema React:
+
+- [React.js](https://reactjs.org/) - Biblioteca para interfaces.
+- [Vite](https://vitejs.dev/) - Ferramenta de build ultra-rápida.
+- [Tailwind CSS](https://tailwindcss.com/) - Framework CSS para design responsivo.
+- [Vercel](https://vercel.com/) - Deploy e hospedagem.
+
+---
